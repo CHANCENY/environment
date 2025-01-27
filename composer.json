@@ -2,9 +2,13 @@
     "name": "simp/environment",
     "description": "This is package for handling site configuration",
     "type": "package",
+    "version": "1.0",
     "require": {
         "symfony/yaml": "^7.2",
         "php": "^8.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.2"
     },
     "license": "MIT",
     "autoload": {
