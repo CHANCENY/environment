@@ -1,0 +1,27 @@
+\033[1mThank you for using the Environment PHP Package to handle your configurations\033[0m
+
+\033[4mHow to set up\033[0m
+
+\033[32mThis package can automatically set itself up as follows:
+  - The folder `.configs` will be created on the webroot.
+  - This folder will contain two subfolders: `.definition` and `.store`.
+  - In `.definition`, the file `definition.yml` will be created with the following keys:
+     - `hash`: Contains a hash string used to save the configurations.
+     - `is_hash`: Set to `true` or `false` to specify if configurations need to be hashed before saving.
+     - `enforce_backup`: Set to `true` or `false` to enforce backups.
+     - `separation_mode`: Set to `true` or `false` to save configurations in separate files.
+     - `max_file_size`: Specifies the maximum file size for saving configurations.
+     - `store`: Contains the `.store` path.
+  - Additional important files will also be created in the `.definition` folder.
+  - The `.store` folder is where configurations will be saved.
+\033[0m
+
+\033[4mHow to override automatic setup\033[0m
+
+\033[32mIf you want to manually set up your environment package requirements, follow these steps:
+  - Create a `.configs/.definitions` folder outside the webroot.
+  - Create a `definition.yml` file in that folder and include the following key:
+     - `config_override`: Specifies the path to a `definition.yml` file that contains the necessary definitions.
+\033[0m
+
+\033[1mThank you again for installing this package.\033[0m

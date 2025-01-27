@@ -1,0 +1,24 @@
+{
+    "name": "simp/environment",
+    "description": "This is package for handling site configuration",
+    "type": "package",
+    "require": {
+        "symfony/yaml": "^7.2",
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Simp\\Environment\\": "src/Environment/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chance Nyasulu",
+            "email": "nyasuluchance6@gmail.com"
+        }
+    ]
+}

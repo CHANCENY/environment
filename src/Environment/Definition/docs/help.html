@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment PHP Package Help</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .green {
+      color: green;
+    }
+    .code {
+      font-family: monospace;
+      background-color: #f4f4f4;
+      padding: 5px;
+      border-radius: 4px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 class="bold">Thank you for using the Environment PHP Package to handle your configurations</h1>
+
+  <h2 class="underline">How to set up</h2>
+  <p class="green">
+    This package can automatically set itself up as follows:
+  </p>
+  <ul class="green">
+    <li>The folder <span class="code">.configs</span> will be created outside the webroot.</li>
+    <li>This folder will contain two subfolders: <span class="code">.definition</span> and <span class="code">.store</span>.</li>
+    <li>In <span class="code">.definition</span>, the file <span class="code">definition.yml</span> will be created with the following keys:
+      <ul>
+        <li><span class="code">hash</span>: Contains a hash string used to save the configurations.</li>
+        <li><span class="code">is_hash</span>: Set to <span class="code">true</span> or <span class="code">false</span> to specify if configurations need to be hashed before saving.</li>
+        <li><span class="code">enforce_backup</span>: Set to <span class="code">true</span> or <span class="code">false</span> to enforce backups.</li>
+        <li><span class="code">separation_mode</span>: Set to <span class="code">true</span> or <span class="code">false</span> to save configurations in separate files.</li>
+        <li><span class="code">max_file_size</span>: Specifies the maximum file size for saving configurations.</li>
+        <li><span class="code">store</span>: Contains the <span class="code">.store</span> path.</li>
+      </ul>
+    </li>
+    <li>Additional important files will also be created in the <span class="code">.definition</span> folder.</li>
+    <li>The <span class="code">.store</span> folder is where configurations will be saved.</li>
+  </ul>
+
+  <h2 class="underline">How to override automatic setup</h2>
+  <p class="green">
+    If you want to manually set up your environment package requirements, follow these steps:
+  </p>
+  <ul class="green">
+    <li>Create a <span class="code">.configs/.definitions</span> folder outside the webroot.</li>
+    <li>Create a <span class="code">definition.yml</span> file in that folder and include the following key:
+      <ul>
+        <li><span class="code">config_override</span>: Specifies the path to a <span class="code">definition.yml</span> file that contains the necessary definitions.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p class="bold">Thank you again for installing this package.</p>
+</div>
+</body>
+</html>
