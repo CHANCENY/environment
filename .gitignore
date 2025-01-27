@@ -2,3 +2,4 @@
 .configs
 vendor
 composer.lock
+index.php
