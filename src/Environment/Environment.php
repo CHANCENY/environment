@@ -7,7 +7,7 @@ use Simp\Environment\Definition\DefinitionException;
 use Simp\Environment\Parser\Parser;
 use Simp\Environment\Writer\Writer;
 
-class Environment
+abstract class Environment
 {
     /**
      * Get Writer.

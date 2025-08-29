@@ -12,13 +12,13 @@ class Writer extends Definition
 {
     use Helper;
     private array|null $writer_entry;
-    public function __construct()
+    public function __construct(?string $storage_path = null)
     {
-        parent::__construct();
+        parent::__construct($storage_path);
         $store_path = $this->getStore();
         if(!is_dir($store_path)) {
-            @mkdir($store_path, 0755, true);
-            @mkdir($store_path.DIRECTORY_SEPARATOR.'backup', 0755, true);
+            @mkdir($store_path, 0755);
+            @mkdir($store_path.DIRECTORY_SEPARATOR.'backup', 0755);
             @touch($store_path.DIRECTORY_SEPARATOR.'register.yml');
             @touch($store_path.DIRECTORY_SEPARATOR.'collections.yml');
         }

@@ -18,13 +18,21 @@ class Definition
      * @throws RandomException
      * @throws DefinitionException
      */
-    public function __construct()
+    public function __construct(?string $storage_path = null)
     {
-        $config_path = trim($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'.configs', DIRECTORY_SEPARATOR);
-        @mkdir($config_path,recursive:  true);
+        $config_path = null;
+        if($storage_path){
+            $config_path = $storage_path;
+        }
+        else{
+            $config_path = trim($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'.configs', DIRECTORY_SEPARATOR);
+            @mkdir($config_path,0755,true);
+        }
 
-        @mkdir($config_path.DIRECTORY_SEPARATOR.'.definition',recursive:  true);
+
+        @mkdir($config_path.DIRECTORY_SEPARATOR.'.definition',0755,true);
         $definition_file = $config_path.DIRECTORY_SEPARATOR.'.definition'.DIRECTORY_SEPARATOR.'.definition.yml';
+
         if(!file_exists($definition_file)){
             $this->prepareDefinitionData($definition_file, $config_path);
         }
@@ -104,10 +112,12 @@ class Definition
     {
         return $this->definitions['store'] ?? null;
     }
+
     public function getHash()
     {
         return $this->definitions['hash'] ?? null;
     }
+
     public function getIsHash()
     {
         return $this->definitions['is_hash'] ?? false;
